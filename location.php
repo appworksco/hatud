@@ -25,7 +25,7 @@ if (isset($_POST["set_location"])) {
 <style>
     #map {
         width: 100%;
-        height: calc(100vh - 235px);
+        height: calc(100vh - 195px);
     }
 </style>
 
@@ -34,7 +34,7 @@ if (isset($_POST["set_location"])) {
     <div class="row">
         <div class="col-sm-3 col-md-12"></div>
         <div class="col-sm-6 col-md-12 p-0">
-            <div style="height: calc(100vh - 235px); overflow: hidden">
+            <div style="height: calc(100vh - 195px); overflow: hidden">
                 <form action="location.php" method="post">
                     <div id="map"></div>
             </div>
@@ -116,10 +116,6 @@ if (isset($_POST["set_location"])) {
                     // Update the latitude and longitude hidden inputs
                     document.getElementById('latitude').value = marker.getPosition().lat();
                     document.getElementById('longitude').value = marker.getPosition().lng();
-
-                    // Log the latitude and longitude to the console
-                    console.log("Marker Latitude:", marker.getPosition().lat());
-                    console.log("Marker Longitude:", marker.getPosition().lng());
                 });
             } else {
                 marker.setPosition(place.geometry.location);
@@ -128,10 +124,6 @@ if (isset($_POST["set_location"])) {
             // Update the latitude and longitude hidden inputs for the initial position
             document.getElementById('latitude').value = place.geometry.location.lat();
             document.getElementById('longitude').value = place.geometry.location.lng();
-
-            // Log the latitude and longitude to the console
-            console.log("Search Place Latitude:", place.geometry.location.lat());
-            console.log("Search Place Longitude:", place.geometry.location.lng());
         });
 
         // Add a draggable marker for the initial position
@@ -147,10 +139,6 @@ if (isset($_POST["set_location"])) {
             // Update the latitude and longitude hidden inputs
             document.getElementById('latitude').value = marker.getPosition().lat();
             document.getElementById('longitude').value = marker.getPosition().lng();
-
-            // Log the latitude and longitude to the console
-            console.log("Marker Latitude:", marker.getPosition().lat());
-            console.log("Marker Longitude:", marker.getPosition().lng());
         });
 
         // Initially disable the button since the input is empty

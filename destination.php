@@ -38,10 +38,10 @@ if (isset($_GET["location_longitude"])) {
                     <div id="map"></div>
             </div>
             <!-- Hidden values -->
-            <input type="text" id="locationLatitude" name="location_latitude" value="<?= $locationLatitude ?>">
-            <input type="text" id="locationLongitude" name="location_longitude" value="<?= $locationLongitude ?>">
-            <input type="text" id="destinationLatitude" name="destination_latitude">
-            <input type="text" id="destinationLongitude" name="destination_longitude">
+            <input type="hidden" id="locationLatitude" name="location_latitude" value="<?= $locationLatitude ?>">
+            <input type="hidden" id="locationLongitude" name="location_longitude" value="<?= $locationLongitude ?>">
+            <input type="hidden" id="destinationLatitude" name="destination_latitude">
+            <input type="hidden" id="destinationLongitude" name="destination_longitude">
             <div class="bg-light p-3">
                 <div class="d-flex justify-content-between">
                     <p>Fare: <span id="fare">0.00</span></p>
