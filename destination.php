@@ -131,14 +131,14 @@ if (isset($_GET["location_longitude"])) {
                 });
             } else {
                 marker.setPosition(place.geometry.location);
+
+                // Update the latitude and longitude hidden inputs
+                destinationLatitudeInput.value = place.geometry.location.lat();
+                destinationLongitudeInput.value = place.geometry.location.lng();
+
+                // Calculate fare and estimated arrival time
+                calculateFareAndArrivalTime(locationLatitudeInput.value, locationLongitudeInput.value, destinationLatitudeInput.value, destinationLongitudeInput.value);
             }
-
-            // Update the latitude and longitude hidden inputs for the initial position
-            destinationLatitudeInput.value = marker.getPosition().lat();
-            destinationLongitudeInput.value = marker.getPosition().lng();
-
-            // Calculate fare and estimated arrival time
-            calculateFareAndArrivalTime(locationLatitudeInput.value, locationLongitudeInput.value, destinationLatitudeInput.value, destinationLongitudeInput.value);
         });
 
         // Add a draggable marker for the initial position
@@ -208,7 +208,6 @@ if (isset($_GET["location_longitude"])) {
             }
         });
     }
-
 
     function calculateFareFromDistance(distance) {
         // Define base fare and fare per kilometer
