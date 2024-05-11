@@ -15,7 +15,7 @@ if (isset($_POST["submit"])) {
 
     $signUp = $usersFacade->signUp($firstName, $middleName, $lastName, $mobileNumber);
     if ($signUp) {
-        header('Location: home.php?welcome');
+        header('Location: index.php?welcome');
     }
 }
 
@@ -42,7 +42,7 @@ if (isset($_POST["submit"])) {
                     </div>
             </div>
             <input type="hidden" name="mobile_number" value="<?= $mobileNumber ?>">
-            <button type="submit" class="btn btn-success btn-lg w-100" name="submit">Submit</button>
+            <button type="submit" class="btn btn-custom btn-lg w-100" name="submit">Submit</button>
             </form>
         </div>
         <div class="col-sm-3 col-md-12"></div>

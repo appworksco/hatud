@@ -1,16 +1,28 @@
-.bg-wrapper {
-  background-color: #14452f;
+/* Custom Button Start */
+.btn-custom {
+  background-color: #003135 !important;
+  color: #fff !important;
 }
+.btn-custom-outline {
+  border: 1px solid #003135 !important;
+  color: #003135 !important;
+}
+/* Custom Button End */
 
+
+/* Wrapper Start */
 .wrapper {
   height: 100%;
   width: 300px;
   position: relative;
 }
+/* Wrapper End */
 
+
+/* Menu Button Start */
 .wrapper .menu-btn {
   position: absolute;
-  left: 20px;
+  left: 10px;
   top: 10px;
   background: #024950;
   color: #fff;
@@ -25,29 +37,19 @@
   justify-content: center;
   transition: all 0.3s ease;
 }
-
-#btn:checked~.menu-btn {
-  left: 247px;
-}
-
+#btn:checked ~ .menu-btn {left: 247px;}
 .wrapper .menu-btn i {
   position: absolute;
   font-size: 23px;
   transition: all 0.3s ease;
 }
+.wrapper .menu-btn i.bi-arrow-bar-left {opacity: 0}
+#btn:checked~.menu-btn i.bi-arrow-bar-left {opacity: 1}
+#btn:checked~.menu-btn i.bi-arrow-bar-right {opacity: 0}
+/* Menu Button End */
 
-.wrapper .menu-btn i.bi-arrow-bar-left {
-  opacity: 0;
-}
 
-#btn:checked~.menu-btn i.bi-arrow-bar-left {
-  opacity: 1;
-}
-
-#btn:checked~.menu-btn i.bi-arrow-bar-right {
-  opacity: 0;
-}
-
+/* Sidebar Start */
 #sidebar {
   position: fixed;
   background: #404040;
@@ -57,11 +59,7 @@
   left: -270px;
   transition: all 0.3s ease;
 }
-
-#btn:checked~#sidebar {
-  left: 0;
-}
-
+#btn:checked~#sidebar {left: 0;}
 #sidebar .title {
   line-height: 65px;
   background: #003135;
@@ -70,7 +68,6 @@
   color: #f2f2f2;
   border-bottom: 1px solid #222;
 }
-
 #sidebar .list-items {
   position: relative;
   background: #024950;
@@ -78,24 +75,18 @@
   height: 100%;
   list-style: none;
 }
-
 #sidebar .list-items li {
   line-height: 50px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid #333;
   transition: all 0.3s ease;
 }
-
 #sidebar .list-items li:hover {
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
   box-shadow: 0 0px 10px 3px #222;
 }
-
-#sidebar .list-items li:first-child {
-  border-top: none;
-}
-
+#sidebar .list-items li:first-child {border-top: none;}
 #sidebar .list-items li a {
   color: #f2f2f2;
   text-decoration: none;
@@ -105,11 +96,7 @@
   width: 100%;
   display: block;
 }
-
-#sidebar .list-items li a i {
-  margin-right: 10px;
-}
-
+#sidebar .list-items li a i {margin-right: 10px}
 #sidebar .list-items .icons {
   width: 100%;
   height: 40px;
@@ -121,7 +108,6 @@
   align-items: center;
   justify-content: center;
 }
-
 #sidebar .list-items .icons a {
   height: 100%;
   width: 40px;
@@ -134,32 +120,6 @@
   border: 1px solid #09484f;
   transition: all 0.3s ease;
 }
-
-#sidebar .list-items .icons a:hover {
-  background: #124045;
-}
-
-.list-items .icons a:first-child {
-  margin-left: 0px;
-}
-
-.content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  z-index: -1;
-  width: 100%;
-  text-align: center;
-}
-
-.content .header {
-  font-size: 45px;
-  font-weight: 700;
-}
-
-.content p {
-  font-size: 40px;
-  font-weight: 700;
-}
+#sidebar .list-items .icons a:hover {background: #124045}
+#sidebar .list-items .icons a:first-child {margin-left: 0px;}
+/* Sidebar End */
