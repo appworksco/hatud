@@ -19,7 +19,7 @@ if (isset($_POST["sign_in"])) {
                     $_SESSION["user_id"] = $row["id"];
                     $_SESSION["fullname"] = $row["first_name"] . ' ' . $row["middle_name"] . ' ' . $row["last_name"];
                     $_SESSION["mobile_number"] = $row["mobile_number"];
-                    header("Location: home.php");
+                    header("Location: location.php");
                 }
             } else {
                 $errors['mobile_number'] = "It appears that no account has been registered with that mobile number yet.";

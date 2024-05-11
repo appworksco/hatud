@@ -10,7 +10,7 @@
             <h6><?= $fullname ?> <br> <?= $mobileNumber ?></h6>
         </div>
         <ul class="list-items p-0">
-            <li class="ps-2"><a href="home.php"><i class="bi bi-map"></i> Map</a></li>
+            <li class="ps-2"><a href="location.php"><i class="bi bi-map"></i> Map</a></li>
             <li class="ps-2"><a href="#"><i class="bi bi-journal-bookmark"></i> Bookings</a></li>
             <li class="ps-2"><a href="#"><i class="bi bi-chat-left-dots"></i> Support</a></li>
             <li class="ps-2"><a href="logout.php"><i class="bi bi-arrow-return-left"></i> Logout</a></li>
