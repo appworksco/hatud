@@ -29,6 +29,7 @@ $usersFacade = new UsersFacade();
     <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="vendor/bootstrap-icons/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="vendor/datatables/dataTables.bootstrap5.min.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" /> -->
     <title>Hatud</title>
 </head>
 
