@@ -11,9 +11,11 @@ $errors = [];
 
 include(__DIR__ . '/../utils/db/connector.php');
 include(__DIR__ . '/../utils/models/users-facade.php');
+include(__DIR__ . '/../utils/models/booking-facade.php');
 
 // Initialize the facade classes
 $usersFacade = new UsersFacade();
+$bookingFacade = new BookingFacade();
 
 ?>
 
@@ -29,7 +31,6 @@ $usersFacade = new UsersFacade();
     <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="vendor/bootstrap-icons/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="vendor/datatables/dataTables.bootstrap5.min.css">
-    <!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" /> -->
     <title>Hatud</title>
 </head>
 

@@ -21,7 +21,7 @@
 
 /* Menu Button Start */
 .wrapper .menu-btn {
-  position: absolute;
+  position: fixed;
   left: 10px;
   top: 10px;
   background: #024950;
@@ -36,9 +36,9 @@
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
-  z-index: 99999;
+  z-index: 9;
 }
-#btn:checked ~ .menu-btn {left: 247px;}
+#btn:checked ~ .menu-btn {left: 265px;}
 .wrapper .menu-btn i {
   position: absolute;
   font-size: 23px;
@@ -79,8 +79,6 @@
 }
 #sidebar .list-items li {
   line-height: 50px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid #333;
   transition: all 0.3s ease;
 }
 #sidebar .list-items li:hover {
@@ -92,7 +90,7 @@
 #sidebar .list-items li a {
   color: #f2f2f2;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 500;
   height: 100%;
   width: 100%;

@@ -19,6 +19,23 @@ if (isset($_GET["location_longitude"])) {
     $locationLongitude = $_GET["location_longitude"];
 }
 
+if (isset($_POST["book_now"])) {
+    $userId = $_POST["user_id"];
+    $fullname = $_POST["fullname"];
+    $mobileNumber = $_POST["mobile_number"];
+    $locationLatitude = $_POST["location_latitude"];
+    $locationLongitude = $_POST["location_longitude"];
+    $destinationLatitude = $_POST["destination_latitude"];
+    $destinationLongitude = $_POST["destination_longitude"];
+    $fare = $_POST["fare"];
+    $status = 'Pending';
+
+    $bookNow = $bookingFacade->bookNow($userId, $fullname, $mobileNumber, $locationLatitude, $locationLongitude, $destinationLatitude, $destinationLongitude, $fare, $status);
+    if ($bookNow) {
+        header("Location: booked.php");
+    }
+}
+
 ?>
 
 <style>
@@ -38,17 +55,21 @@ if (isset($_GET["location_longitude"])) {
                     <div id="map"></div>
             </div>
             <!-- Hidden values -->
+            <input type="hidden" name="user_id" value="<?= $userId ?>">
+            <input type="hidden" name="fullname" value="<?= $fullname ?>">
+            <input type="hidden" name="mobile_number" value="<?= $mobileNumber ?>">
             <input type="hidden" id="locationLatitude" name="location_latitude" value="<?= $locationLatitude ?>">
             <input type="hidden" id="locationLongitude" name="location_longitude" value="<?= $locationLongitude ?>">
             <input type="hidden" id="destinationLatitude" name="destination_latitude">
             <input type="hidden" id="destinationLongitude" name="destination_longitude">
+            <input type="hidden" id="saveFare" name="fare">
             <div class="bg-light p-3">
                 <div class="d-flex justify-content-between">
                     <p>Fare: <span id="fare">0.00</span></p>
                     <p>Arrival: <span id="arrival">0 Minute/s</span></p>
                 </div>
                 <input type="text" class="form-control my-1" id="autocomplete" placeholder="Where are you going?">
-                <button type="submit" class="btn btn-custom btn-lg w-100 mt-2" id="bookNow">Book Now</button>
+                <button type="submit" class="btn btn-custom btn-lg w-100 mt-2" id="bookNow" name="book_now">Book Now</button>
             </div>
             </form>
         </div>
@@ -200,9 +221,10 @@ if (isset($_GET["location_longitude"])) {
 
                 // Update fare display
                 document.getElementById('fare').innerHTML = formattedFare;
+                document.getElementById('saveFare').value = formattedFare;
 
                 // Update arrival time display
-                document.getElementById('arrival').innerHTML = arrivalTimeInMinutes + " Minutes";
+                document.getElementById('arrival').innerHTML = arrivalTimeInMinutes + " Minute/s";
             } else {
                 console.log('Error:', status);
             }
@@ -233,4 +255,4 @@ if (isset($_GET["location_longitude"])) {
     }
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcX-e3_IzAQX0oFYEblWVOh6izY8m6rk4&libraries=places&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcX-e3_IzAQX0oFYEblWVOh6izY8m6rk4&libraries=places&callback=initMap&loading=async" async defer></script>
